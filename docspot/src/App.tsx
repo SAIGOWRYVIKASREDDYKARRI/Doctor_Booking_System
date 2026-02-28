@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Doctors from "./pages/Doctors";
 import Settings from "./pages/Settings";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="*" element={<NotFound />} />
 

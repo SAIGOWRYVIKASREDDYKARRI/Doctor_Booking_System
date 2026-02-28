@@ -49,38 +49,37 @@ const Navbar = () => {
   const patientLinks = [
     { path: "/", label: "Home" },
     { path: "/doctors", label: "Find Doctors" },
+    { path: "/doctors", label: "Specialties" },
     { path: "/dashboard", label: "My Appointments" },
+    { path: "/about", label: "About Us" },
   ];
 
   const navLinks = role === "doctor" ? doctorLinks : patientLinks;
   const homePath = role ? "/dashboard" : "/";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card border-b">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b">
       <div className="container mx-auto px-4">
 
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-20 items-center">
 
           {/* Logo */}
           <span
             onClick={() => navigate(homePath)}
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex flex-col cursor-pointer"
           >
-            <div className="w-9 h-9 bg-primary rounded-md flex items-center justify-center">
-              <Heart className="text-white" size={18} />
-            </div>
-            <span className="font-bold text-xl">mediConnect</span>
+            <span className="font-bold text-2xl tracking-tight text-primary leading-none">HEALTHCARE</span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">DOCTOR APPOINTMENT</span>
           </span>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-10">
             {navLinks.map(link => (
               <span
                 key={link.label}
                 onClick={() => navigate(link.path)}
-                className={`text-sm cursor-pointer ${
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={`text-base font-medium cursor-pointer transition-colors hover:text-primary ${isActive(link.path) ? "text-primary border-b-2 border-primary" : "text-foreground"
+                  }`}
               >
                 {link.label}
               </span>
@@ -88,18 +87,18 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex gap-3 items-center">
+          <div className="hidden md:flex gap-4 items-center">
 
             <Button variant="ghost" size="sm" onClick={toggleTheme}>
-              {dark ? <Sun size={18}/> : <Moon size={18}/>}
+              {dark ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
 
             {!token ? (
               <>
-                <Button size="sm" variant="ghost" onClick={() => navigate("/login")}>
+                <Button size="sm" variant="ghost" onClick={() => navigate("/login")} className="text-base font-medium">
                   Login
                 </Button>
-                <Button size="sm" onClick={() => navigate("/register")}>
+                <Button size="lg" onClick={() => navigate("/register")} className="rounded-xl px-8 font-bold bg-primary hover:bg-primary/90">
                   Register
                 </Button>
               </>
@@ -113,13 +112,13 @@ const Navbar = () => {
 
           {/* Mobile Toggle */}
           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-            {isOpen ? <X/> : <Menu/>}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-6 border-t animate-in fade-in slide-in-from-top-4 duration-300">
 
             {navLinks.map(link => (
               <div
@@ -128,19 +127,29 @@ const Navbar = () => {
                   navigate(link.path);
                   setIsOpen(false);
                 }}
-                className="block py-2 cursor-pointer"
+                className="block py-3 text-lg font-medium cursor-pointer"
               >
                 {link.label}
               </div>
             ))}
 
-            <Button className="w-full mt-2" onClick={toggleTheme}>
+            <Button className="w-full mt-4 h-12 text-lg" variant="outline" onClick={toggleTheme}>
               {dark ? "Light Mode" : "Dark Mode"}
             </Button>
 
-            {token && (
+            {!token ? (
               <Button
-                className="w-full mt-2"
+                className="w-full mt-4 h-12 text-lg font-bold"
+                onClick={() => {
+                  setIsOpen(false);
+                  navigate("/register");
+                }}
+              >
+                Register
+              </Button>
+            ) : (
+              <Button
+                className="w-full mt-4 h-12 text-lg"
                 variant="outline"
                 onClick={() => {
                   setIsOpen(false);

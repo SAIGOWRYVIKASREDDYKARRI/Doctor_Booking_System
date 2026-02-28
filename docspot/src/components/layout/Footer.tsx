@@ -33,24 +33,24 @@ const Footer = () => {
                 <Plus className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold">
-                Doc<span className="text-primary">Spot</span>
+                HEALTH<span className="text-primary">CARE</span>
               </span>
             </Link>
             <p className="text-background/70 mb-4 text-sm max-w-xs">
-              Making healthcare accessible. Book appointments with qualified doctors anytime.
+              Your trusted partner for finding and booking appointments with qualified doctors in India.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-background/70 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>support@docspot.com</span>
+                <span>support@finddoctor.in</span>
               </div>
               <div className="flex items-center gap-2 text-background/70 text-sm">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 99xxxxxxxx</span>
               </div>
               <div className="flex items-center gap-2 text-background/70 text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>123 Health Street, Medical City</span>
+                <span>Andhra Pradesh, India</span>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-background/10 mt-8 pt-6">
           <p className="text-sm text-background/60 text-center">
-            © {currentYear} DocSpot. All rights reserved.
+            © {currentYear} Vikas. All rights reserved.
           </p>
         </div>
       </div>

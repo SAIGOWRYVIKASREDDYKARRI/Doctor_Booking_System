@@ -8,7 +8,7 @@
 @layer base {
   :root {
     /* Clean white backgrounds */
-    --background: 210 20% 98%;
+    --background: 0 0% 100%;
     --foreground: 210 20% 20%;
     
     /* Card surfaces */
@@ -19,12 +19,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 20%;
     
-    /* Primary - Hospital Blue */
-    --primary: 201 80% 45%;
+    /* Primary - Hospital Teal from Image */
+    --primary: 180 100% 25%;
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Soft gray */
-    --secondary: 210 15% 95%;
+    --secondary: 180 20% 98%;
     --secondary-foreground: 210 20% 25%;
     
     /* Muted surfaces */
@@ -32,7 +32,7 @@
     --muted-foreground: 210 10% 50%;
     
     /* Accent - Soft teal */
-    --accent: 180 50% 45%;
+    --accent: 180 100% 25%;
     --accent-foreground: 0 0% 100%;
     
     /* Destructive */
@@ -50,18 +50,18 @@
     /* Border & Input */
     --border: 210 15% 90%;
     --input: 210 15% 90%;
-    --ring: 201 80% 45%;
+    --ring: 180 100% 25%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
     /* Sidebar */
-    --sidebar-background: 201 80% 45%;
+    --sidebar-background: 180 100% 25%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 201 80% 45%;
-    --sidebar-accent: 201 70% 50%;
+    --sidebar-primary-foreground: 180 100% 25%;
+    --sidebar-accent: 180 100% 22%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 201 60% 55%;
+    --sidebar-border: 180 100% 20%;
     --sidebar-ring: 0 0% 100%;
   }
 

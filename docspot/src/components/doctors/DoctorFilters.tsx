@@ -29,11 +29,11 @@ const specialties = [
 
 const locations = [
   "All Locations",
-  "New York",
-  "Los Angeles",
-  "Chicago",
-  "Houston",
-  "Phoenix",
+  "Hyderabad",
+  "Delhi",
+  "Chennai",
+  "Mumbai",
+  "Lucknow",
 ];
 
 const DoctorFilters = ({ onSearch, onSpecialtyChange, onLocationChange }: DoctorFiltersProps) => {
